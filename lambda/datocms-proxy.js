@@ -1,3 +1,4 @@
+const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
 const LRU = require("lru-cache");
 
 const cache = new LRU();
