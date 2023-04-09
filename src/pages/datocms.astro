@@ -10,7 +10,10 @@ query MyQuery {
 `
 const accessToken = import.meta.env.DATOCMS_TOKEN
 
-const url = "/.netlify/functions/datocms-proxy"
+const url = Astro.url.origin + "/.netlify/functions/datocms-proxy"
+
+console.log("url", url);
+
 
 const headers = new Headers()
 headers.append("Content-Type", "application/json");
