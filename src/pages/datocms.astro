@@ -12,6 +12,9 @@ const accessToken = import.meta.env.DATOCMS_TOKEN
 
 const url = "/.netlify/functions/datocms-proxy"
 
+const headers = new Headers()
+headers.append("Content-Type", "application/json");
+
 const body = JSON.stringify({query, accessToken})
 
 const content = await fetch(url, {
