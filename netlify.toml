@@ -8,5 +8,5 @@
 
 [build]
   command = "astro build"
-  functions = "lambda"
+  functions = "netlify/functions"
   publish = "dist"
