@@ -5,6 +5,7 @@ const defaultTtlMinutes = 15;
 const DATOCMS_URL = "https://graphql.datocms.com/"
 
 exports.handler = async ({ body }) => {
+  console.log("body function", body);
   const { query, accessToken } = JSON.parse(body || "") || {};
   let content;
 
