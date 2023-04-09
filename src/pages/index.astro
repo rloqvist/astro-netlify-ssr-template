@@ -1,6 +1,7 @@
 ---
 import AstroComponent from "components/AstroComponent.astro"
-import {ReactComponent} from "components/ReactComponent"
+import {ReactComponentSSR} from "components/ReactComponentSSR"
+import {ReactComponentCSR} from "components/ReactComponentCSR"
 ---
 <html>
   <head>
@@ -14,11 +15,11 @@ import {ReactComponent} from "components/ReactComponent"
     </div>
     <div>
       <div>A react component (Optional csr disabled)</div>
-      <ReactComponent someProp="myProp2" />
+      <ReactComponentSSR someProp="myProp2" />
     </div>
     <div>
       <div>A react component (Optional csr enabled)</div>
-      <ReactComponent someProp="myProp3" />
+      <ReactComponentCSR someProp="myProp3" />
     </div>
   </body>
 </html>

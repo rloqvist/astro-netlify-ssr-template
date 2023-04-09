@@ -5,7 +5,7 @@ export const StyledReactComponent = styled.div`
   color: ${prop("color")};
 `
 
-export const ReactComponent = ({someProp}) => {
+export const ReactComponentCSR = ({someProp}) => {
   return (
     <StyledReactComponent color="purple">
       Your react prop is: {someProp}
