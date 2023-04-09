@@ -1,12 +1,13 @@
 # example netlify.toml
 
 [functions]
-  directory = "dist/functions"
+  directory = "netlify/functions"
 
 [context.production.environment]
   CI = "false"
 
 [build]
-  command = "astro build && cp -a netlify/functions/. dist/functions/"
+  #command = "astro build && cp -a netlify/functions/. dist/functions/"
+  command = "astro build"
   functions = "netlify/functions"
   publish = "dist"
