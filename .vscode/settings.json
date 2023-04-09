@@ -6,8 +6,7 @@
     "workbench.startupEditor": "none",
     "editor.tabSize": 2,
     "javascript.updateImportsOnFileMove.enabled": "always",
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "[javascript]": {
-      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "emmet.includeLanguages": {
+        "astro": "html"
     }
 }
