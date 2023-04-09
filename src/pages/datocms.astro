@@ -1,4 +1,6 @@
 ---
+import {datocms} from "utils/datocms"
+
 const query = `
 query MyQuery {
   allSomethings {
@@ -9,29 +11,9 @@ query MyQuery {
 }
 `
 const accessToken = import.meta.env.DATOCMS_TOKEN
-
 const url = Astro.url.origin + "/.netlify/functions/datocms-proxy"
 
-console.log("url", url);
-
-
-const headers = new Headers()
-headers.append("Content-Type", "application/json");
-
-const body = JSON.stringify({query, accessToken})
-
-console.log("body astro", body);
-
-
-const content = await fetch(url, {
-  headers,
-  body,
-  method: "POST"
-}).then(response => {
-  console.log("response", response);
-  
-  return response.json()
-})
+const content = await datocms({url, accessToken, query})
 ---
 <pre>
   {JSON.stringify(content, null, 2)}

@@ -6,17 +6,12 @@ const defaultTtlMinutes = 15;
 const DATOCMS_URL = "https://graphql.datocms.com/"
 
 exports.handler = async ({ body }) => {
-  console.log("body function", body);
   const { query, accessToken } = JSON.parse(body || "") || {};
   let content;
 
   if (cache.has(query)) {
     content = cache.get(query);
   } else {
-    // const headers = new Headers()
-    // headers.append("Content-Type", "application/json");
-    // headers.append("Authorization", `Bearer ${accessToken}`);
-
     const options = {
       headers: {
         "Content-Type": "application/json",
@@ -27,10 +22,8 @@ exports.handler = async ({ body }) => {
     }
 
     content = await fetch(DATOCMS_URL, options).then(response => {
-      console.log("response function", response);
       return response.json()
     }).then(result => {
-      console.log("result function", result);
       return result.data
     })
 
