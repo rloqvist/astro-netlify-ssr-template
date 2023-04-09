@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import {prop} from "styled-tools"
 
-export const StyledReactComponent = div`
+export const StyledReactComponent = styled.div`
   color: ${prop("color")};
 `
 
