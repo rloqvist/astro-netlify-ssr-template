@@ -1,7 +1,7 @@
 # example netlify.toml
 
 [functions]
-  directory = "netlify/functions"
+  directory = "lambda"
 
 [context.production.environment]
   CI = "false"
