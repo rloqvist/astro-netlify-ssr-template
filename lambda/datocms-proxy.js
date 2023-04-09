@@ -21,8 +21,10 @@ exports.handler = async ({ body }) => {
       body: JSON.stringify({query}),
       method: "POST"
     }).then(response => {
+      console.log("response function", response);
       return response.json()
     }).then(result => {
+      console.log("result function", result);
       return result.data
     })
 
