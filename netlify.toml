@@ -7,6 +7,6 @@
   CI = "false"
 
 [build]
-  command = "astro build && cp -a dist/netlify/functions/. dist/functions/"
+  command = "astro build && cp -a netlify/functions/. dist/functions/"
   functions = "netlify/functions"
   publish = "dist"
