@@ -1,0 +1,9 @@
+{
+    "editor.fontSize": 12,
+    "window.zoomLevel": 1,
+    "workbench.tree.indent": 20,
+    "markdown.extension.preview.autoShowPreviewToSide": true,
+    "workbench.startupEditor": "none",
+    "editor.tabSize": 2,
+    "javascript.updateImportsOnFileMove.enabled": "always"
+}
