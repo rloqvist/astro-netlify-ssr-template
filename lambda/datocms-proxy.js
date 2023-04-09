@@ -12,15 +12,20 @@ exports.handler = async ({ body }) => {
   if (cache.has(query)) {
     content = cache.get(query);
   } else {
-    const headers = new Headers()
-    headers.append("Content-Type", "application/json");
-    headers.append("Authorization", `Bearer ${accessToken}`);
+    // const headers = new Headers()
+    // headers.append("Content-Type", "application/json");
+    // headers.append("Authorization", `Bearer ${accessToken}`);
 
-    content = await fetch(DATOCMS_URL, {
-      headers,
+    const options = {
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${accessToken}`
+      },
       body: JSON.stringify({query}),
       method: "POST"
-    }).then(response => {
+    }
+
+    content = await fetch(DATOCMS_URL, options).then(response => {
       console.log("response function", response);
       return response.json()
     }).then(result => {
