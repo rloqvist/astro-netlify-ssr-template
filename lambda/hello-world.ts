@@ -1,5 +1,10 @@
+interface ResponseBody {
+  status: string
+  message: string
+}
+
 exports.handler = async (event) => {
-  const body = {
+  const body: ResponseBody = {
     status: "success",
     message: "Hello, World!",
   };
